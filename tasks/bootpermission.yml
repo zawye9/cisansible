@@ -4,13 +4,13 @@
    tasks:
            - name: grub_cfg permission
              file:
-                     - path: /boot/grub2/grub.cfg
+                       path: /boot/grub2/grub.cfg
                        owner: root
                        group: root
                        mode: 0000
            - name: grubenv premission
              file:
-                     - path: /boot/grub2/grubenv
+                       path: /boot/grub2/grubenv
                        owner: root
                        group: root
                        mode: 0000

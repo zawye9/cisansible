@@ -9,3 +9,27 @@ https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.
 2020-10-05 08:18:27,138 p=26372 u=ansible n=ansible | changed: [ip-192-168-1-34.ap-southeast-1.compute.internal]
 2020-10-05 08:18:27,141 p=26372 u=ansible n=ansible | PLAY RECAP ***********************************************************************************************************************************
 2020-10-05 08:18:27,142 p=26372 u=ansible n=ansible | ip-192-168-1-34.ap-southeast-1.compute.internal : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-10-05 09:20:04,952 p=27084 u=ansible n=ansible | ERROR! unexpected parameter type in action: <class 'ansible.parsing.yaml.objects.AnsibleSequence'>
+
+The error appears to be in '/home/ansible/ansible/tasks/bootpermission.yml': line 5, column 14, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+   tasks:
+           - name: grub_cfg permission
+             ^ here
+
+2020-10-05 09:21:44,331 p=27227 u=ansible n=ansible | PLAY [control] *******************************************************************************************************************************
+2020-10-05 09:21:44,340 p=27227 u=ansible n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************
+2020-10-05 09:21:45,698 p=27227 u=ansible n=ansible | [WARNING]: Platform linux on host ip-192-168-1-34.ap-southeast-1.compute.internal is using the discovered Python interpreter at
+/usr/bin/python, but future installation of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+2020-10-05 09:21:45,699 p=27227 u=ansible n=ansible | ok: [ip-192-168-1-34.ap-southeast-1.compute.internal]
+2020-10-05 09:21:45,710 p=27227 u=ansible n=ansible | TASK [grub_cfg permission] *******************************************************************************************************************
+2020-10-05 09:21:46,215 p=27227 u=ansible n=ansible | changed: [ip-192-168-1-34.ap-southeast-1.compute.internal]
+2020-10-05 09:21:46,228 p=27227 u=ansible n=ansible | TASK [grubenv premission] ********************************************************************************************************************
+2020-10-05 09:21:46,540 p=27227 u=ansible n=ansible | changed: [ip-192-168-1-34.ap-southeast-1.compute.internal]
+2020-10-05 09:21:46,543 p=27227 u=ansible n=ansible | PLAY RECAP ***********************************************************************************************************************************
+2020-10-05 09:21:46,543 p=27227 u=ansible n=ansible | ip-192-168-1-34.ap-southeast-1.compute.internal : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
