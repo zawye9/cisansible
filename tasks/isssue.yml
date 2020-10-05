@@ -1,0 +1,17 @@
+---
+ - hosts: control
+   become: true
+   tasks:
+           - name: issue file permisssion change
+             file: 
+              path: /etc/issue
+              owner: root
+              group: root
+              mode: 0644
+           - name: issue.net file permission change
+             file:
+              path: /etc/issue.net
+              owner: root
+              group: root
+              mode: 0644
+

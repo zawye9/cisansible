@@ -1,0 +1,11 @@
+---
+- hosts: control
+  become: true
+  tasks:
+          - name: remove
+            template:
+              src: ./templates/cramfs.j2
+              dest: /etc/modprobe.d/cramfs.conf
+              owner: root
+              group: root
+              mode: 0644

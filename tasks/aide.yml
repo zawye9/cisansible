@@ -1,0 +1,16 @@
+---
+ - hosts: control
+   become: true
+   tasks:
+          - name: install aide
+            yum:
+                    name: aide
+                    state: present
+          - name: aide init
+            action: command /usr/sbin/aide -c /etc/aide.conf --init
+          - name: aide db create
+            action: command /bin/cp /var/lib/aide/aide.db.new.gz /var/lib/aide/aide.db.gz
+          - name: aide check 
+            action: command /usr/sbin/aide --check
+                   
+
