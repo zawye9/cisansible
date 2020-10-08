@@ -1,0 +1,9 @@
+---
+ - hosts: control
+   become: true
+   tasks:
+           - name: cups service uninstall if required
+             yum:
+                     name: cups
+                     state: absent
+

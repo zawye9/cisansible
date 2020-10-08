@@ -1,0 +1,18 @@
+---
+ - hosts: control
+   become: true
+   tasks:
+           - name: chrony installed
+             yum:
+                   name: chrony
+                   state: present
+
+           - name: chrony start
+             service:
+                     name: chronyd
+                     state: started
+                     enabled: true
+           - name: change timezone
+             timezone:
+                     name: Asia/Yangon
+          

@@ -1,0 +1,18 @@
+---
+ - hosts: control
+   become: true
+   tasks:
+             - name: list security updates
+               yum:
+                list: security
+               register: result
+ 
+             - debug:
+                var: result
+                verbosity: 4
+
+             - name: install security updates
+               yum:
+                name: '*'
+                security: yes
+                state: latest
