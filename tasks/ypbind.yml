@@ -1,0 +1,9 @@
+---
+ - hosts: control
+   become: true
+   tasks:
+           - name: remove NIS
+             yum:
+                     name: ypbind
+                     state: absent
+

@@ -1,0 +1,17 @@
+---
+ - hosts: control
+   become: true
+   vars_prompt:
+           - name: network
+             prompt: "enter network name"
+             private: false
+           - name: value
+             prompt: "enable(1) / disable(0)"
+             private: false
+   tasks:
+           - name: "{{ network }}"
+             sysctl:
+                     name: "{{ network }}"
+                     value: "{{ value }}"
+                     sysctl_set: true
+                     state: present

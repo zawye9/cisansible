@@ -1,0 +1,15 @@
+---
+ - hosts: control
+   become: true
+   tasks:
+           - name: packet redirects disable
+             sysctl:
+                     name: net.ipv4.conf.all.send_redirects
+                     value: '0'
+                     sysctl_set: yes
+                     state: present
+             register: name
+           - name: output
+             debug:
+                   msg:
+                           - ' {{ name }}' 

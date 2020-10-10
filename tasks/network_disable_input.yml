@@ -1,0 +1,14 @@
+---
+ - hosts: control
+   become: true
+   vars_prompt:
+           - name: taskname
+             prompt: "enter network service name that you want to stop and disable"
+             private: false
+   tasks:
+           - sysclt:
+                     name: '{{taskname}}'
+                     value: 0
+                     sysctl_set: true
+                     state: present
+

@@ -1,9 +1,0 @@
----
- - hosts: control
-   become: true
-   tasks:
-           name : avahi service disable
-           service:
-                   name: avahi-daemon
-                   state: stop
-                   enabled: false

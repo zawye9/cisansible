@@ -1,0 +1,13 @@
+---
+ - hosts: control
+   become: true
+   vars_prompt:
+           - name: taskname
+             prompt: "enter service name that you want to stop and disable"
+             private: false
+   tasks:
+           - name: disable service
+             service:
+              name: "{{taskname }}"
+              state: stopped
+              enabled: false
